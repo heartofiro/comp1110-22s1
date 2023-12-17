@@ -29,7 +29,6 @@ public class Q1Multiplier {
             return -1;
         }
         return fi;
-
         // FIXME complete this method
     }
 }
