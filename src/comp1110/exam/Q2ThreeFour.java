@@ -28,6 +28,51 @@ public class Q2ThreeFour {
      * is not a ThreeFour number.
      */
     public static int threeFour(String number) {
-        return Integer.MIN_VALUE; // FIXME complete this method
+        if (number.isEmpty()){
+            return -1;
+        }
+        for (int i = 0;i<number.length();i++){
+            if (number.charAt(i)<'0'||number.charAt(i)>'9'){
+                return -1;
+            }
+            if (number.charAt(i)=='0'&&i!=number.length()-1){
+                number = number.substring(1);
+                i--;
+            }
+        }
+        int sum = 0;
+        if (isTreeFore(number)){
+            while (!number.isEmpty()){
+                int c = number.length()-1;
+                String d = number.substring(c);
+                int l = Integer.parseInt(d); //在这步上超时
+                if (l%2==1){
+                    sum+=l;
+                }
+            }
+        }else {
+            while (!number.isEmpty()){
+                int l = Integer.parseInt(number.substring(number.length()-1));
+                if (l%2==0){
+                    sum+=l;
+                }
+            }
+        }
+        return Integer.MIN_VALUE;
+        // FIXME complete this method
+    }
+    public static boolean isTreeFore(String number){
+        String c = number;
+        boolean j = true;
+        while (!c.isEmpty()){
+            int cv = Integer.parseInt(c);
+            if (cv%3!=0&&cv%4!=0){
+                j=false;
+                break;
+            }else {
+                c=c.substring(1,c.length()-1);
+            }
+        }
+        return j;
     }
 }

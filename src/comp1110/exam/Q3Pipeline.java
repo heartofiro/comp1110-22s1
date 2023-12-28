@@ -50,6 +50,8 @@ public class Q3Pipeline {
      * @return the maximum amount of oil that could be extracted from the map given the pipes limit
      */
     public static int maxExtract(String map, int pipes) {
-        return 0; // FIXME implement method
+
+        return 0;
+        // FIXME implement method
     }
 }

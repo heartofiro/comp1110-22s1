@@ -67,7 +67,6 @@ public class Q2Difference {
         return sol;
         // FIXME complete this method
     }
-
     public static Boolean isDiff(String number){
         String num = number;
         boolean c = true;

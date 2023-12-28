@@ -42,6 +42,16 @@ public class Q3Hiking {
      * @return cost of lowest cost path to map edge or -1 if no path exists
      */
     public static int movementCost(String map) {
-        return 0; // FIXME implement method
+        double a = map.length();
+        int n = (int) Math.sqrt(a);
+        int[][] map1 = new int[n][n];
+        int f=0, s=0;
+        for (int i=0;i<n;i++){
+            if (map.charAt(i)=='.'){
+
+            }
+        }
+        return 0;
+        // FIXME implement method
     }
 }

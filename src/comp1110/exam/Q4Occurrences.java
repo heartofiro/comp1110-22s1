@@ -34,6 +34,26 @@ public class Q4Occurrences {
      * @param tag second character of tag to consider
      */
     public static void occurrences(String inFile, String outFile, char tag) {
+        int m = 0;
+        StringBuilder tar = new StringBuilder();
+        boolean c = false;
+        StringBuilder outFileBuilder = new StringBuilder(outFile);
+        for (int i = 0; i<inFile.length(); i++){
+            if (inFile.charAt(i)==':'){
+                if (c){
+                    outFileBuilder.append(tar);
+                }
+                c = false;
+                i++;
+                if (inFile.charAt(i)==tag){
+                    c = true;
+                }
+                tar = new StringBuilder();
+            }else {
+                tar.append(inFile.charAt(i));
+            }
+        }
+        outFile = outFileBuilder.toString();
         // FIXME complete this method
     }
 }

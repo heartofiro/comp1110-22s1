@@ -35,6 +35,23 @@ public class Q4BadLength {
      * @param increment value to increase marker values by, can be zero or positive
      */
     public static void badLengths(String inFile, String outFile, int increment) {
+        boolean c = false;
+        int wnum = 0, m = 0;
+        StringBuilder tar = new StringBuilder();
+        StringBuilder outFileBuilder = new StringBuilder(outFile);
+        for (int i = 0;i<inFile.length();i++){
+            if (inFile.charAt(i)==':'){
+                if (m!=wnum+increment){
+                    outFileBuilder.append(tar);
+                }
+                tar = new StringBuilder();
+                m = Integer.parseInt(inFile.substring(i+1,i+2));
+            }else {
+                wnum++;
+                tar.append(inFile.charAt(i));
+            }
+        }
+        outFile = outFileBuilder.toString();
         // FIXME complete this method
     }
 }
